@@ -24,7 +24,7 @@
 // to be dynamic. Giving the file an extension removed the ambiguity instead
 // of working around it.)
 
-import { loadConfig, branchState } from "../.claude/hooks/harness.mjs";
+import { loadConfig, branchState } from "../hooks/harness.mjs";
 
 const state = branchState(loadConfig());
 
@@ -39,6 +39,8 @@ if (state.problems.length) {
     );
     process.exit(9);
   }
-  process.stderr.write(`\n  Committed anyway — this is a warning, not a wall.\n\n`);
+  process.stderr.write(
+    `\n  Committed anyway — this is a warning, not a wall.\n\n`,
+  );
 }
 process.exit(0);
