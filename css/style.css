@@ -9,7 +9,14 @@
    growing file means everything is in one place and you will meet each other
    in it. Both are real answers — decide it together, early, and write it down
    in PLAN.md so nobody is surprised. */
-
+:root {
+  --color-background: #f3ebdd;
+  --color-surface: #ddd0b8;
+  --color-primary: #304a3b;
+  --color-secondary: #71806b;
+  --color-accent: #b58a4a;
+  --color-text: #302a24;
+}
 
 /* FR006 — The layout.
    Where the boxes go: the arrangement of the header, the sections and the
@@ -17,13 +24,11 @@
    column of things, grid when you mean rows *and* columns. Before you reach
    for position, check whether the layout you want is one of those two. */
 
-
 /* FR007 — The look of it.
    Colour, typography, spacing, borders, shadows, and what happens on hover and
    on keyboard focus. Focus especially: it is how someone who is not using a
    mouse can see where they are, and the default one disappears the moment you
    start restyling. */
-
 
 /* FR010 — Responsive, if you get there.
    A stretch goal, not a requirement. Desktop first, so your media queries ask
