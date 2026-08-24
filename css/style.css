@@ -45,6 +45,116 @@
   display: block;
 }
 
+/* ---------- Support Section ---------- */
+
+.support {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: 2rem;
+}
+
+.support__container {
+  max-width: 1600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.support__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.support__header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.support__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.support__card {
+  background-color: var(--color-surface);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 6px 6px 0 var(--color-primary);
+}
+
+.support__card:hover {
+  background-color: var(--color-secondary);
+  border: var(--color-secondary);
+  color: var(--color-background);
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.support__card--featured {
+  transform: scale(1.05);
+}
+
+.support__card--featured:hover {
+  transform: scale(1.1);
+}
+
+.support__card a {
+  display: inline-block;
+  align-self: center;
+
+  padding: 0.7rem 1.2rem;
+  margin: auto;
+
+  background-color: var(--color-primary);
+  color: var(--color-background);
+
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.support__card:hover a {
+  background-color: var(--color-background);
+  border-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+.support__card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.support__card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.support__card a span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support__card a:hover span {
+  transform: translateX(4px);
+}
 /* ---------- Footer ---------- */
 
 footer {
