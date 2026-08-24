@@ -10,6 +10,12 @@
    in it. Both are real answers — decide it together, early, and write it down
    in PLAN.md so nobody is surprised. */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --color-background: #f3ebdd;
   --color-surface: #ddd0b8;
@@ -34,11 +40,58 @@
 /* FR010 — Responsive, if you get there.
    A stretch goal, not a requirement. Desktop first, so your media queries ask
    what should change on a narrower screen. Do not start here. */
-
-* {
+body {
+  background-color: var(--color-background);
+}
+.oben-nav {
+  padding: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-background);
+}
+.oben-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+.oben-nav a {
+  color: var(--color-text);
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  padding: 8px 14px;
+  transition: 0.7s ease;
+}
+
+.oben-nav a:hover {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transform: translateY(-4px);
+}
+.oben-nav a:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+header h1 {
+  color: var(--color-text);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 0;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
 .img {
