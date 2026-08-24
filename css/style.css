@@ -153,6 +153,8 @@ header p {
   height: 300px;
   object-fit: cover;
   border-radius: 2rem;
+  border: 3px solid var(--color-secondary);
+  padding: 6px;
 }
 
 .creatures__image--dragon {
