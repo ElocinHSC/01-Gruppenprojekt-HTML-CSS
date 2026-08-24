@@ -10,13 +10,11 @@
    in it. Both are real answers — decide it together, early, and write it down
    in PLAN.md so nobody is surprised. */
 
-
 /* FR006 — The layout.
    Where the boxes go: the arrangement of the header, the sections and the
    footer, and the arrangement of things inside them. Flexbox for a row or a
    column of things, grid when you mean rows *and* columns. Before you reach
    for position, check whether the layout you want is one of those two. */
-
 
 /* FR007 — The look of it.
    Colour, typography, spacing, borders, shadows, and what happens on hover and
@@ -24,7 +22,112 @@
    mouse can see where they are, and the default one disappears the moment you
    start restyling. */
 
-
 /* FR010 — Responsive, if you get there.
    A stretch goal, not a requirement. Desktop first, so your media queries ask
    what should change on a narrower screen. Do not start here. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img {
+  display: block;
+}
+
+footer {
+  background-color: green;
+  padding: 2rem 2rem 1rem 2rem;
+  color: beige;
+}
+
+.footer__content {
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: start;
+  margin: 0 auto 2rem auto;
+}
+
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 1rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer ul {
+  list-style: none;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: beige;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  gap: 1rem;
+}
+
+.footer__social-logos {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.footer__social a {
+  width: 30px;
+  height: 30px;
+  color: beige;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__social svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer__legal {
+  max-width: 1600px;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+  gap: 0.7rem;
+  padding-top: 0.7rem;
+}
+
+.footer__legal a {
+  text-decoration: none;
+  color: beige;
+  font-size: 0.7rem;
+}
+
+.footer__legal-wrapper {
+  border-top: 1px solid beige;
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+footer h4,
+h5 {
+  font-size: 1.2rem;
+}
