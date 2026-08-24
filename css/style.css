@@ -340,3 +340,38 @@ footer h4 {
 footer p {
   color: var(--color-secondary);
 }
+
+/* ---------- creatures ---------- */
+.adoptables {
+  max-width: 800px;
+  margin: auto;
+}
+.adoptable-img {
+  width: 75%;
+  max-width: 75%;
+  height: auto;
+  box-sizing: border-box;
+
+  border-radius: 50%;
+  border: 3px solid var();
+  padding: 6px;
+
+  box-shadow:
+    0 0 0 3px var(),
+    0 0 18px rgba(216, 198, 163, 0.35);
+
+  background-color: var();
+}
+.adoptables-grid {
+  display: grid;
+  border: 1px solid var();
+  border-radius: 15px;
+  padding: 25px;
+  grid-template-columns: 1fr;
+}
+
+.adoptables-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-width: 0;
+}
