@@ -9,8 +9,7 @@
    growing file means everything is in one place and you will meet each other
    in it. Both are real answers — decide it together, early, and write it down
    in PLAN.md so nobody is surprised. */
-<<<<<<< HEAD
-=======
+
 :root {
   --color-background: #f3ebdd;
   --color-surface: #ddd0b8;
@@ -19,7 +18,6 @@
   --color-accent: #b58a4a;
   --color-text: #302a24;
 }
->>>>>>> main
 
 /* FR006 — The layout.
    Where the boxes go: the arrangement of the header, the sections and the
