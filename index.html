@@ -24,11 +24,6 @@
     <title>Adopt a Dragon</title>
   </head>
   <body>
-    <!-- FR002 — Header and navigation.
-     The top of the page and the way someone gets from here to the other
-     sections or pages. Which element says "this is navigation" without a class
-     name having to say it for you? -->
-
     <nav class="oben-nav">
       <ul>
         <li><a href="index.html">Unser Haus</a></li>
@@ -41,53 +36,70 @@
     <header>
       <h1>Haus der magischen Tiere</h1>
       <p>
-        Tretet ein und besucht das Haus der magischen Tierwesen - Ein Ort voller
-        wundersamer Wesen die ein Zuhause suchen.
+        Tritt ein und besuche das Haus der magischen Tierwesen – ein Ort voller
+        wundersamer Wesen, die ein Zuhause suchen.
       </p>
     </header>
 
-    <!-- FR003 — The content sections.
-     The middle: whatever your design has — a hero, blocks of text, a gallery,
-     cards, a form. Each one is a piece of the document with its own meaning,
-     and the elements you pick are how you say what that meaning is. -->
-    <section class="support">
-      <div class="support__container">
-        <div class="support__header">
-          <h2>Wie möchtest du helfen?</h2>
-          <p>
-            Jede Kreatur verdient ein Zuhause. Du entscheidest, wie du Teil
-            ihrer Geschichte wirst.
-          </p>
+    <main>
+      <section class="hero">
+        <img
+          class="img-hero"
+          src="assets/exterior.webp"
+          alt="Märchenhaftes Haus der magischen Tiere in einem verwunschenen Wald"
+          width="1440"
+          height="960"
+        />
+        <h2>Ein Zuhause für jedes Wunder.</h2>
+        <p>
+          Entdecke magische Wesen, die auf einen Menschen warten, mit dem sie
+          ihr nächstes Abenteuer beginnen können.
+        </p>
+        <p>
+          Weiter unten findest du unsere Services und Erfahrungsberichte. Schau
+          dich um – vielleicht findet dein Herz ja zu einem unserer magischen
+          Wesen.
+        </p>
+      </section>
+      <section class="support">
+        <div class="support__container">
+          <div class="support__header">
+            <h2>Wie möchtest du helfen?</h2>
+            <p>
+              Jede Kreatur verdient ein Zuhause. Du entscheidest, wie du Teil
+              ihrer Geschichte wirst.
+            </p>
+          </div>
+          <div class="support__cards">
+            <article class="support__card">
+              <h3>Pflegen</h3>
+              <p>
+                Manchmal braucht ein kleines Wesen nur etwas Zeit. Schenke ihm
+                vorübergehend Schutz, Fürsorge und ein Zuhause.
+              </p>
+              <a href="#">Mehr erfahren</a>
+            </article>
+            <article class="support__card support__card--featured">
+              <h3>Adoptieren</h3>
+              <p>
+                Schenke einer magischen Kreatur ein liebevolles Zuhause und
+                beginnt gemeinsam euer nächstes Abenteuer.
+              </p>
+              <a href="#">Kreaturen entdecken <span>→</span></a>
+            </article>
+            <article class="support__card">
+              <h3>Unterstützen</h3>
+              <p>
+                Auch ein kleiner Zauber kann Großes bewirken. Hilf uns dabei,
+                magische Wesen zu versorgen und ihnen ein neues Zuhause zu
+                schenken.
+              </p>
+              <a href="#">Unterstützen</a>
+            </article>
+          </div>
         </div>
-        <div class="support__cards">
-          <article class="support__card">
-            <h3>Pflegen</h3>
-            <p>
-              Manchmal braucht ein kleines Wesen nur etwas Zeit. Schenke ihm
-              vorübergehend Schutz, Fürsorge und ein Zuhause.
-            </p>
-            <a href="#">Mehr erfahren</a>
-          </article>
-          <article class="support__card support__card--featured">
-            <h3>Adoptieren</h3>
-            <p>
-              Schenke einer magischen Kreatur ein liebevolles Zuhause und
-              beginnt gemeinsam euer nächstes Abenteuer.
-            </p>
-            <a href="#">Kreaturen entdecken <span>→</span></a>
-          </article>
-          <article class="support__card">
-            <h3>Unterstützen</h3>
-            <p>
-              Auch ein kleiner Zauber kann Großes bewirken. Hilf uns dabei,
-              magische Wesen zu versorgen und ihnen ein neues Zuhause zu
-              schenken.
-            </p>
-            <a href="#">Unterstützen</a>
-          </article>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- FR004 — Footer.
      The bottom of the page. Belongs to the page as a whole rather than to any
