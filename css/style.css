@@ -290,6 +290,7 @@ header p {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: var(--space-xl);
+  transform: translateX(-2%);
 }
 
 .creatures__gallery {
@@ -576,6 +577,7 @@ footer p {
 @media (max-width: 1050px) {
   .creatures__container {
     grid-template-columns: 1fr;
+    transform: none;
   }
 }
 
@@ -607,9 +609,7 @@ footer p {
   .oben-nav ul {
     flex-wrap: wrap;
   }
-}
 
-@media (max-width: 600px) {
   .section {
     padding-block: var(--space-lg);
   }
