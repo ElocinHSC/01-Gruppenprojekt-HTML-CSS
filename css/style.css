@@ -25,6 +25,20 @@
   --color-text: #302a24;
 }
 
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
+    format("woff2");
+  font-weight: 100 700;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf")
+    format("woff2");
+  font-weight: 100 700;
+}
+
 /* FR006 — The layout.
    Where the boxes go: the arrangement of the header, the sections and the
    footer, and the arrangement of things inside them. Flexbox for a row or a
@@ -42,7 +56,17 @@
    what should change on a narrower screen. Do not start here. */
 body {
   background-color: var(--color-background);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
 .oben-nav {
   padding: 16px;
   position: sticky;
@@ -119,6 +143,140 @@ header p {
 
 .img {
   display: block;
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials {
+  color: var(--color-text);
+  padding: 4rem 2rem;
+}
+
+.testimonials__container {
+  max-width: 1600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.testimonials__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonials__header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.testimonials__header p {
+  max-width: 650px;
+  margin: 0.75rem auto 0;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.testimonials__cards {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.testimonials__card {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+
+  max-width: 700px;
+  padding: 2rem;
+
+  background-color: var(--color-surface);
+  border-radius: 2rem;
+}
+
+.testimonials__rating {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  letter-spacing: 0.15rem;
+}
+
+.testimonials__card blockquote {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.testimonials__card blockquote::before {
+  content: "“";
+  display: block;
+  color: var(--color-accent);
+  font-size: 4rem;
+  line-height: 0.5;
+  margin-bottom: 1rem;
+}
+
+.testimonials__author {
+  color: var(--color-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.testimonials__author strong {
+  color: var(--color-primary);
+}
+
+.testimonials__container > input[type="radio"] {
+  display: none;
+}
+
+#testimonial-1:checked ~ .testimonials__cards .testimonial-1 {
+  display: flex;
+}
+
+#testimonial-2:checked ~ .testimonials__cards .testimonial-2 {
+  display: flex;
+}
+
+#testimonial-3:checked ~ .testimonials__cards .testimonial-3 {
+  display: flex;
+}
+
+#testimonial-1:checked ~ .testimonials__controls label[for="testimonial-1"],
+#testimonial-2:checked ~ .testimonials__controls label[for="testimonial-2"],
+#testimonial-3:checked ~ .testimonials__controls label[for="testimonial-3"] {
+  color: var(--color-accent);
+}
+
+.testimonials__controls {
+  align-self: center;
+}
+
+/* .testimonials__controls label {
+  color: var(--color-secondary);
+  cursor: pointer;
+  margin: 0 0.25rem;
+  transition: color 0.2s ease;
+} */
+
+.testimonials__controls label img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.5s ease;
+  margin: 0.3rem;
+}
+
+#testimonial-1:checked ~ .testimonials__controls label[for="testimonial-1"] img,
+#testimonial-2:checked ~ .testimonials__controls label[for="testimonial-2"] img,
+#testimonial-3:checked
+  ~ .testimonials__controls
+  label[for="testimonial-3"]
+  img {
+  transform: scale(1.35);
 }
 
 /* ---------- Support Section ---------- */
