@@ -28,14 +28,14 @@
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("../assets/fonts/Cormorant_Garamond/CormorantGaramond-VariableFont_wght.ttf")
-    format("woff2");
+    format("truetype");
   font-weight: 100 700;
 }
 
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf")
-    format("woff2");
+    format("truetype");
   font-weight: 100 700;
 }
 
@@ -277,6 +277,107 @@ header p {
   label[for="testimonial-3"]
   img {
   transform: scale(1.35);
+}
+
+/* ---------- Creature Section ---------- */
+.creatures__section {
+  padding: 2rem;
+}
+
+.creatures__container {
+  max-width: 1600px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+}
+
+.creatures__gallery {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.creatures__images {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.creatures__gallery img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2rem;
+  border: 3px solid var(--color-secondary);
+  padding: 6px;
+}
+
+.creatures__image--dragon {
+  top: 80px;
+  left: 280px;
+  z-index: 3;
+}
+
+.creatures__image--glowcat {
+  top: 0px;
+  left: 0px;
+}
+
+.creatures__image--deer {
+  top: 250px;
+  left: 70px;
+}
+
+.creatures__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+.creatures__content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.creatures__content p {
+  max-width: 550px;
+  text-align: center;
+}
+
+.creatures__content a {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.creatures__content a:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-3px);
+}
+
+.creatures__content a span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.creatures__content a:hover span {
+  transform: translateX(4px);
 }
 
 /* ---------- Support Section ---------- */
