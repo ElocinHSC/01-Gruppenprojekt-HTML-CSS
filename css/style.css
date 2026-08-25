@@ -48,6 +48,11 @@
 /* Grundeinstellungen */
 body {
   background-color: var(--color-background);
+  background-image: url("/assets/paw-gold.svg");
+  background-repeat: no-repeat;
+  background-position: 2% 7%;
+  background-size: clamp(300px, 45vw, 500px);
+  background-attachment: fixed;
   color: var(--color-text);
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -285,6 +290,7 @@ header p {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: var(--space-xl);
+  transform: translateX(-2%);
 }
 
 .creatures__gallery {
@@ -471,6 +477,7 @@ footer {
 .footer__content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-lg);
   align-items: start;
 }
 
@@ -565,8 +572,135 @@ footer p {
   text-align: center;
 }
 
-/* ---------- creatures ---------- */
+/* ---------- Media Queries Main ---------- */
 
+@media (max-width: 1050px) {
+  .creatures__container {
+    grid-template-columns: 1fr;
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .support__cards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .testimonials__card {
+    padding: var(--space-md);
+  }
+
+  .testimonials__card blockquote {
+    font-size: 1rem;
+  }
+
+  .testimonials__card blockquote::before {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonials__container {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 620px) {
+  .oben-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  .creatures__gallery {
+    min-height: 400px;
+  }
+
+  .creatures__images {
+    width: 400px;
+    height: 400px;
+  }
+
+  .creatures__gallery img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .creatures__image--dragon {
+    top: 60px;
+    left: 180px;
+  }
+
+  .creatures__image--glowcat {
+    top: 0;
+    left: 0;
+  }
+
+  .creatures__image--deer {
+    top: 200px;
+    left: 50px;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer__logo {
+    grid-column: 1 / -1;
+  }
+
+  .footer__navigation {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer__social {
+    justify-self: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    width: min(100% - 2rem, var(--container-width));
+  }
+
+  .creatures__gallery {
+    min-height: 340px;
+  }
+
+  .creatures__images {
+    width: 340px;
+    height: 340px;
+  }
+
+  .creatures__gallery img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .creatures__image--dragon {
+    top: 50px;
+    left: 160px;
+  }
+
+  .creatures__image--glowcat {
+    top: 0;
+    left: 0;
+  }
+
+  .creatures__image--deer {
+    top: 170px;
+    left: 45px;
+  }
+}
+
+/* ---------- creatures ---------- */
 .creatures {
   color: var(--color-text);
   max-width: 800px;
