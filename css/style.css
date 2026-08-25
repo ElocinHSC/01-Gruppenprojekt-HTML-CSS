@@ -214,7 +214,7 @@ header p {
 .testimonials__card blockquote::before {
   content: "“";
   display: block;
-  olor: var(--color-accent);
+  color: var(--color-accent);
   font-size: 4rem;
   line-height: 0.5;
   margin-bottom: 1rem;
