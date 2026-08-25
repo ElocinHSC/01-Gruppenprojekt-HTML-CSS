@@ -1,15 +1,3 @@
-/* css/style.css — yours to type, all of it. Nothing is set up here, not even a
-   reset: whatever you want the browser to stop doing by default, you write.
-
-   The markers name the requirements from README.md. Delete one once you have
-   built past it.
-
-   One stylesheet or several is up to you. More files means fewer merge
-   conflicts and more <link> tags (or an @import at the top of this one); one
-   growing file means everything is in one place and you will meet each other
-   in it. Both are real answers — decide it together, early, and write it down
-   in PLAN.md so nobody is surprised. */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,12 +5,30 @@
 }
 
 :root {
+  /* Colors */
   --color-background: #f3ebdd;
   --color-surface: #ddd0b8;
   --color-primary: #304a3b;
   --color-secondary: #71806b;
   --color-accent: #b58a4a;
   --color-text: #302a24;
+
+  /* Layout */
+  --container-width: 1200px;
+
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Borders */
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+
+  /* Typography */
+  --line-height-body: 1.6;
+  --line-height-heading: 1.1;
 }
 
 @font-face {
@@ -39,40 +45,56 @@
   font-weight: 100 700;
 }
 
-/* FR006 — The layout.
-   Where the boxes go: the arrangement of the header, the sections and the
-   footer, and the arrangement of things inside them. Flexbox for a row or a
-   column of things, grid when you mean rows *and* columns. Before you reach
-   for position, check whether the layout you want is one of those two. */
-
-/* FR007 — The look of it.
-   Colour, typography, spacing, borders, shadows, and what happens on hover and
-   on keyboard focus. Focus especially: it is how someone who is not using a
-   mouse can see where they are, and the default one disappears the moment you
-   start restyling. */
-
-/* FR010 — Responsive, if you get there.
-   A stretch goal, not a requirement. Desktop first, so your media queries ask
-   what should change on a narrower screen. Do not start here. */
+/* Grundeinstellungen */
 body {
   background-color: var(--color-background);
+  color: var(--color-text);
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  line-height: var(--line-height-body);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
+  line-height: var(--line-height-heading);
 }
 
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.container {
+  width: min(100% - 4rem, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+/* ---------- Navigation ---------- */
 .oben-nav {
   padding: 16px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-background);
 }
 .oben-nav ul {
   display: flex;
@@ -82,6 +104,7 @@ h3 {
   margin: 0;
   padding: 0;
 }
+
 .oben-nav a {
   color: var(--color-text);
   display: inline-block;
@@ -101,28 +124,24 @@ h3 {
   outline: 2px solid var(--color-primary);
 }
 
+/* ---------- Header ---------- */
 header {
   text-align: center;
-  padding: 30px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-header h1 {
-  color: var(--color-text);
+/* header h1 {
   font-size: 2.5rem;
   letter-spacing: 2px;
-}
+} */
 
 header p {
   margin-top: 0;
   font-style: italic;
   letter-spacing: 1px;
 }
+
 /* ---------- Hero Section ---------- */
 .hero {
-  max-width: 800px;
-  margin: 0 auto;
   text-align: center;
 }
 .hero p {
@@ -137,27 +156,14 @@ header p {
   padding: 6px;
   max-width: 100%;
   height: auto;
-  box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
-.img {
-  display: block;
-}
-
 /* ---------- Testimonials ---------- */
-
-.testimonials {
-  color: var(--color-text);
-  padding: 4rem 2rem;
-}
-
 .testimonials__container {
-  max-width: 1600px;
-  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--space-lg);
 }
 
 .testimonials__header {
@@ -167,16 +173,10 @@ header p {
   text-align: center;
 }
 
-.testimonials__header h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-}
-
 .testimonials__header p {
   max-width: 650px;
   margin: 0.75rem auto 0;
   color: var(--color-secondary);
-  line-height: 1.6;
   text-align: center;
 }
 
@@ -189,7 +189,7 @@ header p {
 .testimonials__card {
   display: none;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-md);
   align-items: center;
   text-align: center;
 
@@ -197,7 +197,10 @@ header p {
   padding: 2rem;
 
   background-color: var(--color-surface);
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
+
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 6px;
 }
 
 .testimonials__rating {
@@ -208,7 +211,6 @@ header p {
 
 .testimonials__card blockquote {
   font-size: 1.15rem;
-  line-height: 1.7;
 }
 
 .testimonials__card blockquote::before {
@@ -222,7 +224,6 @@ header p {
 
 .testimonials__author {
   color: var(--color-secondary);
-  line-height: 1.5;
   font-size: 0.95rem;
 }
 
@@ -280,16 +281,10 @@ header p {
 }
 
 /* ---------- Creature Section ---------- */
-.creatures__section {
-  padding: 2rem;
-}
-
 .creatures__container {
-  max-width: 1600px;
-  margin: 2rem auto;
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 4rem;
+  gap: var(--space-xl);
 }
 
 .creatures__gallery {
@@ -310,7 +305,7 @@ header p {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
   border: 3px solid var(--color-secondary);
   padding: 6px;
 }
@@ -334,15 +329,12 @@ header p {
 .creatures__content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-lg);
   align-items: center;
   justify-content: center;
-  line-height: 1.6;
 }
 
 .creatures__content h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
   text-align: center;
 }
 
@@ -356,7 +348,7 @@ header p {
   padding: 0.7rem 1.2rem;
   background-color: var(--color-primary);
   color: var(--color-background);
-  border-radius: 1rem;
+  border-radius: var(--radius-md);
   text-align: center;
   text-decoration: none;
   font-weight: 600;
@@ -381,68 +373,56 @@ header p {
 }
 
 /* ---------- Support Section ---------- */
-
-.support {
-  background-color: var(--color-background);
-  color: var(--color-text);
-  padding: 2rem;
-}
-
 .support__container {
-  max-width: 1600px;
-  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--space-lg);
 }
 
 .support__header {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.support__header h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  gap: var(--space-sm);
+  align-items: center;
+  text-align: center;
 }
 
 .support__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: var(--space-lg);
+  max-width: 1050px;
+  margin-inline: auto;
+}
+
+.support__card--frame {
+  padding: 6px;
+  border: 3px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
 }
 
 .support__card {
   background-color: var(--color-surface);
   position: relative;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  border: 2px solid var(--color-primary);
-  border-radius: 1rem;
+  gap: var(--space-md);
+  padding: 1.5rem;
+
+  border-radius: calc(var(--radius-lg) - 6px);
 
   transition:
     transform 0.3s ease,
     background-color 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: 6px 6px 0 var(--color-primary);
 }
 
 .support__card:hover {
   background-color: var(--color-secondary);
-  border: var(--color-secondary);
   color: var(--color-background);
   transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.support__card--featured {
-  transform: scale(1.05);
-}
-
-.support__card--featured:hover {
-  transform: scale(1.1);
 }
 
 .support__card a {
@@ -456,7 +436,7 @@ header p {
   color: var(--color-background);
 
   border: 2px solid var(--color-primary);
-  border-radius: 1rem;
+  border-radius: var(--radius-md);
 
   transition:
     background-color 0.3s ease,
@@ -473,56 +453,46 @@ header p {
 }
 
 .support__card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  text-align: center;
 }
 
 .support__card p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-.support__card a span {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.support__card a:hover span {
-  transform: translateX(4px);
-}
 /* ---------- Footer ---------- */
 
 footer {
   background-color: var(--color-primary);
-  padding: 2rem 2rem 1rem 2rem;
   color: var(--color-background);
 }
 
 .footer__content {
-  max-width: 1600px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   align-items: start;
-  margin: 0 auto 2rem auto;
 }
 
 .footer__logo {
+  align-self: center;
+  justify-self: center;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .footer__navigation {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .footer__links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-sm);
 }
 
 footer ul {
@@ -542,7 +512,7 @@ footer ul {
   display: flex;
   flex-direction: column;
   justify-self: end;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .footer__social-logos {
@@ -566,12 +536,9 @@ footer ul {
 }
 
 .footer__legal {
-  max-width: 1600px;
-  width: calc(100% - 4rem);
-  margin: 0 auto;
   display: flex;
   justify-content: end;
-  gap: 0.7rem;
+  gap: var(--space-sm);
   padding-top: 0.7rem;
 }
 
@@ -583,19 +550,17 @@ footer ul {
 
 .footer__legal-wrapper {
   border-top: 1px solid var(--color-secondary);
-  margin-left: -2rem;
-  margin-right: -2rem;
 }
 
-footer h4,
-h5 {
-  font-size: 1.2rem;
-}
-
-footer h4 {
+.footer__brand {
   color: var(--color-accent);
+  font-family: "Cormorant Garamond";
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 footer p {
   color: var(--color-secondary);
+  text-align: center;
 }
